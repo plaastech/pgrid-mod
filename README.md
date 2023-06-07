@@ -40,13 +40,7 @@ Get a view of what PowerGrid can offer in just 2 commands:
 Install
 
 ```bash
-composer require power-components/livewire-powergrid
-```
-
-Run
-
-```bash
-php artisan powergrid:demo
+composer require nr/pg-mod
 ```
 
 <br/>
@@ -79,9 +73,9 @@ With PowerGrid you get right out of the box:
 
 - **Link inside a table cell**
 
-- **Livewire Modal Integration ([Wire Elements Modal](https://github.com/wire-elements/modal))**
+- **Livewire Modal Integration**
 
-- **Data Export to XLSX/CSV ([Spout](https://github.com/box/spout))**
+- **Data Export to XLSX/CSV**
 
 - **Queue Export for large tables**
 
@@ -90,8 +84,6 @@ With PowerGrid you get right out of the box:
 - **Translations available for 🇺🇸 🇧🇷 🇪🇸 🇮🇹 🇩🇪 and others...**
 
 <br/>
-
- ![Laravel Livewire Tables](https://github.com/Power-Components/powergrid-doc/blob/main/docs/_media/example.gif?raw=true)
 
 ------
 
@@ -103,42 +95,3 @@ With PowerGrid you get right out of the box:
 - [Laravel 8x+](https://laravel.com/docs/9.x/installation)
 - [Livewire 2x](https://laravel-livewire.com)
 - [Tailwind 2x or 3x](https://tailwindcss.com/docs/guides/laravel) or [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-
-<br/>
-
-## 2. Install
-
-Please follow the steps indicated in our [Documentation - Install](https://livewire-powergrid.com/#/get-started/install) page.
-
-<br/>
-
-## 3. Support
-
-For questions, issues, bug reports and feature requests, please use our [Issues](https://github.com/Power-Components/livewire-powergrid/issues).
-
-Before submitting a new request, please look into our previous issues.
-
-Verify if your bug/question or feature request has been previously submitted.
-
-<br/>
-
-## 4. How to contribute
-
-We appreciate your interest in contributing with PowerGrid.
-
-Please read the [Contributing Guide](https://github.com/Power-Components/livewire-powergrid/blob/main/CONTRIBUTING.md).
-
-<br/>
-
-## 5. Credits
-
-Created by: [Luan Freitas](https://twitter.com/luanfreitasdev)
-
-- [Contributors](../../contributors)
-- Logo & artwork by [Caneco](https://twitter.com/caneco)
-
-<br/>
-
-## 6. Thanks  💓
-
-- [JetBrains PhpStorm](https://www.jetbrains.com/phpstorm/) ([@phpstorm](https://twitter.com/phpstorm)) for sponsoring open-source development.

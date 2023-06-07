@@ -103,6 +103,15 @@ class Model implements ModelFilterInterface
     public function filterDatePicker(Builder $query, string $field, array $value): void
     {
         if (isset($value[0]) && isset($value[1])) {
+
+            $value[0] = $value[0] instanceof Carbon
+                    ? $value[0]
+                    : Carbon::parse($value[0])->tz(config('app.timezone'));
+
+            $value[1] = $value[1] instanceof Carbon
+                ? $value[1]
+                : Carbon::parse($value[1])->tz(config('app.timezone'));
+
             $query->whereBetween($field, [Carbon::parse($value[0]), Carbon::parse($value[1])]);
         }
     }
