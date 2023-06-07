@@ -40,7 +40,7 @@ Get a view of what PowerGrid can offer in just 2 commands:
 Install
 
 ```bash
-composer require nr/pg-mod
+composer require nr/pgrid-mod
 ```
 
 <br/>

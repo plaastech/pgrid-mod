@@ -1,7 +1,7 @@
 {
-    "name": "theshahriars/pg-mod",
+    "name": "nr/pgrid-mod",
     "description": "PowerGrid generates Advanced Datatables using Laravel Livewire.",
-    "homepage": "https://gitlab.com/proshahriar/pg-mod",
+    "homepage": "https://github.com/plaastech/pgrid-mod",
     "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,
