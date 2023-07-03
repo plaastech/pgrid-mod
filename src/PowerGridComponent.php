@@ -42,6 +42,8 @@ class PowerGridComponent extends Component
 
     public string $recordCount = '';
 
+    public bool $recordCountOnTop = false;
+
     public array $filtered = [];
 
     public string $primaryKey = 'id';
@@ -98,6 +100,18 @@ class PowerGridComponent extends Component
 
         return $this;
     }
+
+    /**
+     * @return $this
+     */
+    public function showRecordCountOnTop(): PowerGridComponent
+    {
+        $this->recordCountOnTop = true;
+
+        return $this;
+    }
+
+
 
     /**
      * default false
