@@ -29,6 +29,7 @@
             @include(powerGridThemeRoot().'.loading')
 
         </div>
+
         @if($recordCountOnTop)
             <div class="col-3 col-sm-4 d-flex justify-content-sm-end justify-content-end align-items-center">
                 <span class="badge bg-primary text-light font-total-top">
@@ -36,13 +37,10 @@
                 </span>
             </div>
         @endif
+
     </div>
 </div>
 
 @include(powerGridThemeRoot().'.batch-exporting')
 
 @include(powerGridThemeRoot().'.enabled-filters')
-
-
-
-
