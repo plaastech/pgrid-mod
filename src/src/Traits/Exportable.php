@@ -54,12 +54,14 @@ trait Exportable
             $sortField = $currentTable . '.' . $this->sortField;
         }
 
-        $results = $this->resolveModel()
+        /*$results = $this->resolveModel()
             ->when($inClause, function ($query, $inClause) {
                 return $query->whereIn($this->primaryKey, $inClause);
             })
             ->orderBy($sortField, $this->sortDirection)
-            ->get();
+            ->get();*/
+
+        $results = collect($this->fillData()->items());
 
         return $this->transform($results);
     }
