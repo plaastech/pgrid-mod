@@ -4,9 +4,11 @@ namespace PowerComponents\LivewirePowerGrid\Traits;
 
 use Illuminate\Bus\Batch;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\{Collection as BaseCollection, Str};
 use PowerComponents\LivewirePowerGrid\Services\Spout\{ExportToCsv, ExportToXLS};
+use PowerComponents\LivewirePowerGrid\Helpers\Model;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 /**
@@ -54,12 +56,23 @@ trait Exportable
             $sortField = $currentTable . '.' . $this->sortField;
         }
 
-        $results = $this->resolveModel()
+        /*$results = $this->resolveModel()
             ->when($inClause, function ($query, $inClause) {
                 return $query->whereIn($this->primaryKey, $inClause);
             })
             ->orderBy($sortField, $this->sortDirection)
-            ->get();
+            ->get();*/
+
+        $results = $this->resolveModel($this->datasource)
+            ->where(function (Builder $query) {
+                Model::query($query)
+                    ->setColumns($this->columns)
+                    ->setSearch($this->search)
+                    ->setRelationSearch($this->relationSearch)
+                    ->setFilters($this->filters)
+                    ->filterContains()
+                    ->filter();
+            })->orderBy($sortField, $this->sortDirection)->get();
 
         return $this->transform($results);
     }

@@ -16,36 +16,28 @@
             </button>
             <ul class="dropdown-menu">
                 @if(in_array('excel',$exportType))
-                    <li class="d-flex">
-                        <div class="dropdown-item">
-                            Excel
-                            <a class="text-black-50" wire:click="exportToXLS()" href="#">
-                                @lang('livewire-powergrid::datatable.labels.all')
-                            </a>
-                            @if($checkbox)
-                                /
-                                <a class="text-black-50" wire:click="exportToXLS(true)" href="#">
-                                    @lang('livewire-powergrid::datatable.labels.selected')
-                                </a>
-                            @endif
-                        </div>
-                    </li>
+                    <a class="text-black-50 d-100" wire:click="exportToXLS({{ $checkbox ? true : '' }})" href="#">
+                        <li class="d-flex">
+                            <div class="dropdown-item">
+                                Excel @lang('livewire-powergrid::datatable.labels.all')
+                                @if($checkbox)
+                                    / @lang('livewire-powergrid::datatable.labels.selected')
+                                @endif
+                            </div>
+                        </li>
+                    </a>
                 @endif
                 @if(in_array('csv',$exportType))
-                    <li class="d-flex">
-                        <div class="dropdown-item">
-                            Csv
-                            <a class="text-black-50" wire:click="exportToCsv()" href="#">
-                                @lang('livewire-powergrid::datatable.labels.all')
-                            </a>
-                            @if($checkbox)
-                                /
-                                <a class="text-black-50" wire:click="exportToCsv(true)" href="#">
-                                    @lang('livewire-powergrid::datatable.labels.selected')
-                                </a>
-                            @endif
-                        </div>
-                    </li>
+                    <a class="text-black-50 d-100" wire:click="exportToCsv({{ $checkbox ? true : '' }})" href="#">
+                        <li class="d-flex">
+                            <div class="dropdown-item">
+                                Csv @lang('livewire-powergrid::datatable.labels.all')
+                                @if($checkbox)
+                                    / @lang('livewire-powergrid::datatable.labels.selected')
+                                @endif
+                            </div>
+                        </li>
+                    </a>
                 @endif
             </ul>
         </div>
