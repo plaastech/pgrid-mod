@@ -248,10 +248,10 @@ class PowerGridComponent extends Component
 
             $results = $this->applySorting($filters);
 
-            if ($this->headerTotalColumn || $this->footerTotalColumn) {
+            /*if ($this->headerTotalColumn || $this->footerTotalColumn) {
                 $this->withoutPaginatedData = $results->values()
                     ->map(fn ($item) => (array) $item);
-            }
+            }*/
 
             if ($results->count()) {
                 $this->filtered = $results->pluck('id')->toArray();
@@ -299,9 +299,9 @@ class PowerGridComponent extends Component
 
         $results = $results->orderBy($sortField, $this->sortDirection);
 
-        if ($this->headerTotalColumn || $this->footerTotalColumn) {
-            $this->withPaginatedData = $this->transform($results->get());
-        }
+        /*if ($this->headerTotalColumn || $this->footerTotalColumn) {
+            $this->withoutPaginatedData = $this->transform($results->get());
+        }*/
 
         if ($this->perPage > 0) {
             $results = $results->paginate($this->perPage);

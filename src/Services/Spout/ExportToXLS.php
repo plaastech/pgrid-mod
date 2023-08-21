@@ -47,8 +47,8 @@ class ExportToXLS extends Export implements ExportInterface
         $style = (new StyleBuilder())
             ->setFontBold()
             ->setFontColor(Color::BLACK)
-            ->setShouldWrapText(false)
             ->setCellAlignment(CellAlignment::CENTER)
+            ->setShouldWrapText(false)
             ->setBackgroundColor('d0d3d8')
             ->build();
 
