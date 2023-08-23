@@ -3,6 +3,7 @@
 'data' => null,
 'actions' => null,
 'checkbox' => null,
+'serial' => null,
 'primaryKey' => null,
 'columns' => null,
 'currentTable' => null,
@@ -10,6 +11,9 @@
 ])
 <tr class="{{ $theme->table->trBodyClass }} bg-secondary" style="{{ $theme->table->trBodyStyle }} font-weight: bold">
     @if($checkbox)
+        <td></td>
+    @endif
+    @if($serial)
         <td></td>
     @endif
     @foreach ($columns as $column)

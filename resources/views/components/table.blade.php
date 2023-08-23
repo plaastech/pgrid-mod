@@ -8,6 +8,14 @@
                     :checkbox="$checkbox"
                     :theme="$theme->checkbox"/>
             @endif
+
+            @if($serialNo)
+                <x-livewire-powergrid::serial-col
+                    :theme="$theme"
+                    :serial="$serialNo"
+                    :title="$serialTitle"/>
+            @endif
+
             @foreach($columns as $column)
                 <x-livewire-powergrid::cols
                     :column="$column"
@@ -31,6 +39,7 @@
         <x-livewire-powergrid::inline-filters
             :makeFilters="$makeFilters"
             :checkbox="$checkbox"
+            :serial="$serialNo"
             :actions="$actions"
             :columns="$columns"
             :theme="$theme"
@@ -43,6 +52,7 @@
             <th>
                 <tr class="{{ $theme->table->trBodyClass }}" style="{{ $theme->table->trBodyStyle }}">
                     <td class="{{ $theme->table->tdBodyClass }}" style="{{ $theme->table->tdBodyStyle }}" colspan="{{ (($checkbox) ? 1:0)
+                                    + (($serialNo) ? 1:0)
                                     + ((isset($actions)) ? 1: 0)
                                     + (count($columns))
                                     }}">
@@ -58,14 +68,24 @@
                     :theme="$theme"
                     :columns="$columns"
                     :checkbox="$checkbox"
+                    :serial="$serialNo"
                     :data="$data"
                     :actions="$actions"
                     :withoutPaginatedData="$withoutPaginatedData"
                     :withPaginatedData="$withPaginatedData"
                 />
             @endif
+
+            @php
+                if($serialNo)
+                    $index = $this->page > 1 ? ($this->page - 1) * $this->perPage : 0;
+            @endphp
+
             @foreach($data as $row)
                 @php
+                    if ($serialNo)
+                        ++$index;
+
                     $class            = $theme->table->trBodyClass;
                     $rules            = $helperClass->makeActionRules('pg:rows', $row);
 
@@ -98,6 +118,13 @@
                             :checkbox="$checkbox"/>
                     @endif
 
+                    @if($serialNo)
+                        <x-livewire-powergrid::serial-row
+                            :theme="$theme"
+                            :serial="$serialNo"
+                            :value="$index"/>
+                    @endif
+
                     <x-livewire-powergrid::row
                         :tableName="$tableName"
                         :currentTable="$currentTable"
@@ -120,6 +147,7 @@
                     :theme="$theme"
                     :columns="$columns"
                     :checkbox="$checkbox"
+                    :serial="$serialNo"
                     :data="$data"
                     :actions="$actions"
                     :withoutPaginatedData="$withoutPaginatedData"

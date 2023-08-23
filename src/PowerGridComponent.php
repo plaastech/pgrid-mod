@@ -44,6 +44,10 @@ class PowerGridComponent extends Component
 
     public bool $recordCountOnTop = false;
 
+    public bool $serialNo = false;
+
+    public string $serialTitle = '';
+
     public array $filtered = [];
 
     public string $primaryKey = 'id';
@@ -127,6 +131,14 @@ class PowerGridComponent extends Component
     {
         $this->checkbox          = true;
         $this->checkboxAttribute = $attribute;
+
+        return $this;
+    }
+
+    public function showSerialNo(string $title = 'SN'): PowerGridComponent
+    {
+        $this->serialNo          = true;
+        $this->serialTitle = $title;
 
         return $this;
     }

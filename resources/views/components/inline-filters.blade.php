@@ -1,6 +1,7 @@
 @props([
     'makeFilters' => null,
     'checkbox' => null,
+    'serial' => null,
     'columns' => null,
     'actions' => null,
     'theme' => null,
@@ -14,6 +15,9 @@
         <tr class="{{ $theme->table->trClass }} {{ $theme->table->trFiltersClass }}" class="{{ $theme->table->trStyle }} {{ $theme->table->trFiltersStyle }}">
             @if(count($makeFilters))
                 @if($checkbox)
+                    <td class="{{ $theme->table->tdBodyClass }}" style="{{ $theme->table->tdBodyStyle }}"></td>
+                @endif
+                @if($serial)
                     <td class="{{ $theme->table->tdBodyClass }}" style="{{ $theme->table->tdBodyStyle }}"></td>
                 @endif
 
