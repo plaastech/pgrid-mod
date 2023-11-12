@@ -1,6 +1,6 @@
 <div>
     @if($toggleColumns)
-        <div class="btn-group ps-2">
+        <div class="btn-group pe-2">
             <button class="btn btn-secondary btn-sm dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
