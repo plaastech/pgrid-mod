@@ -67,6 +67,8 @@ class PowerGridComponent extends Component
 
     public bool $toggleColumns = false;
 
+    public bool $isColumnToggled = false;
+
     public array $relationSearch = [];
 
     public bool $ignoreTablePrefix = true;
@@ -497,6 +499,8 @@ class PowerGridComponent extends Component
      */
     public function toggleColumn(string $field): void
     {
+        $this->isColumnToggled = true;
+
         $this->columns = collect($this->columns)->map(function ($column) use ($field) {
             if (data_get($column, 'field') === $field) {
                 data_set($column, 'hidden', !data_get($column, 'hidden'));
