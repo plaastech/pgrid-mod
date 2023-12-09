@@ -115,7 +115,8 @@
                             :ruleDisable="$ruleDisable"
                             :ruleSetAttribute="$ruleSetAttribute[0] ?? []"
                             :attribute="$row->{$checkboxAttribute}"
-                            :checkbox="$checkbox"/>
+                            :checkbox="$checkbox"
+                            :checkboxSingle="$checkboxSingle"/>
                     @endif
 
                     @if($serialNo)

@@ -10,6 +10,7 @@
 'withPaginatedData' => null,
 'withPaginatedData' => null,
 ])
+@dd($actions)
 <tr class="{{ $theme->table->trBodyClass }}" style="{{ $theme->table->trBodyStyle }}">
     @if($checkbox)
         <td></td>

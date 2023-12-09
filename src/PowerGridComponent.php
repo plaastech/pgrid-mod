@@ -129,10 +129,11 @@ class PowerGridComponent extends Component
         return $this;
     }
 
-    public function showCheckBox(string $attribute = 'id'): PowerGridComponent
+    public function showCheckBox(string $attribute = 'id', $checkboxSingle = false): PowerGridComponent
     {
         $this->checkbox          = true;
         $this->checkboxAttribute = $attribute;
+        $this->checkboxSingle = $checkboxSingle;
 
         return $this;
     }

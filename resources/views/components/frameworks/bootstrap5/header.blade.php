@@ -24,6 +24,8 @@
 
             @includeIf(powerGridThemeRoot().'.toggle-columns')
 
+            @include(powerGridThemeRoot().'.actions-header')
+
             @include(powerGridThemeRoot().'.filter')
 
             @include(powerGridThemeRoot().'.loading')

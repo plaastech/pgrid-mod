@@ -12,6 +12,8 @@ trait Checkbox
 
     public bool $checkboxAll = false;
 
+    public bool $checkboxSingle = false;
+
     public array $checkboxValues = [];
 
     public string $checkboxAttribute = '';
@@ -42,5 +44,14 @@ trait Checkbox
                 $this->checkboxValues[] = (string) $model->{$this->checkboxAttribute};
             }
         });
+    }
+
+    public function selectCheckboxSingle(): void
+    {
+        if (!$this->checkboxSingle) {
+            $this->checkboxValues = [];
+
+            return;
+        }
     }
 }

@@ -1,6 +1,7 @@
 @props([
     'theme' => null,
     'checkbox' => null,
+    'checkboxSingle' => false,
     'ruleHide'=> false,
     'ruleDisable' => false,
     'ruleSetAttribute' => null,
@@ -38,6 +39,9 @@
                            class="{{ $theme->inputClass }}"
                            @endif
                            type="checkbox"
+                           @if($checkboxSingle)
+                               wire:click="selectCheckboxSingle()"
+                           @endif
                            wire:model.defer="checkboxValues"
                            value="{{ $attribute }}">
                 </label>
